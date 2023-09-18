@@ -1,0 +1,185 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-27-2020, 10:12:40 PM
+    Author     : karol
+*/
+
+* {
+    margin:0; 
+    padding:0;
+}
+
+/*
+body{
+    background-image: url(../imagenes/fondo.jpg);
+}*/
+
+body:before{
+    content:"";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: linear-gradient(90deg, green, orange, red);
+    background-size: 400% 300%;
+    opacity: 0.9;
+    z-index: -1;
+    animation: BgGradient 5s ease infinite;
+}
+
+@keyframes BgGradient{  
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+
+div.principal{
+    min-height: calc(100% - 7rem);
+    margin-left: 20%;
+    margin-right: 20%;
+    /* Margenes 
+    margin-top: 15%;
+    margin-bottom: 15%;*/
+    background-color: #FDDFAB;
+}
+
+center{
+    padding: 20px;
+    /*background-color: #DC8326; color de fondo de busqueda*/
+    background-color: #E9BB05;
+    color: white; 
+}
+
+form{
+    /*
+    padding-top: 6%;
+    padding-left: 38%; Padding para poner label y debajo el input*/
+    /*Poner label al par del inptu*/
+    padding-left: 28%;
+}
+
+label{
+    display: inline-block;
+    /*width: 1000px; Pone el label y debajo el input */
+    /*Poner label al par del input*/
+    width: 150px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+input{
+    width: 16em;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+select{
+    width: 16.4em;
+}
+
+input.boton{
+    background-color: #9BD113;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px; 
+    margin-bottom: 30px;
+}
+
+input.boton:hover{
+    background-color: #030C4C;
+    color: white;
+}
+
+textarea{
+    width: 220px;
+}
+
+
+table#tabla{
+    margin-left: -17em; /*Posición de la tabla facturas*/
+    background-color: white;
+}
+
+#tabla {
+    margin-left: 5%;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+#tabla td, #tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tabla tr:hover {
+    background-color: #ddd;
+}
+
+#tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #9BD113;
+    color: white;
+}
+
+img.eliminarDetalle{
+    padding-left: 12.5px;
+    width: 50%;
+}
+
+input.botonDetalle{
+    background-color: #0FC52C;
+    color: white;
+    padding: -10px;
+    border-radius: 5px;
+    font-weight: bold;
+
+    margin-left: 9px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+input.botonDetalle:hover{
+    background-color: #E69F08;
+
+}
+
+div.botonRegistro{
+    margin-left: 50px;
+    padding-left: 50px;
+}
+
+center.detalles{
+    background-color: transparent;
+    color: black;
+    margin-right: 0em;
+}
+
+input[name="subTotal"], input[name="total"], input[name="precio"] {
+    text-align: right;
+}
+
+p.lempira{
+    text-transform: lowercase;
+    margin-top: -29px;
+    margin-left: 10.7em; /*Lempira al Final*/
+    /* margin-left: 26.5em; lempira al Final*/
+    text-transform:uppercase; /*Titulos en Mayusculas*/
+}
+
+footer{
+    position: absolute;
+}

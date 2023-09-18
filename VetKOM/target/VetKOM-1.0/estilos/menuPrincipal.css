@@ -1,0 +1,409 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-22-2020, 03:41:20 PM
+    Author     : karol
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background-color: #9BFF51;
+    font-family: 'Patua One', cursive;
+    transition: all 0.5s linear;
+    z-index: 3;
+}
+
+.encabezado{
+    margin: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+nav{
+    margin-top: -92px;
+    margin-left: 120px;
+}
+
+/*ENCABEZADO MENU*/
+
+.encabezadoMenu{ /* encabezado del menu */
+    background: #9BD113; /*Color del encabezado (verde)*/
+    color: #fff;
+    padding-top: 10em;
+    margin: auto;
+    overflow: hidden;
+
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0px;
+}
+
+.menu ul { /* menu */
+    list-style:none;
+    position: fixed;
+    margin-left: -35px; /*posición del menú*/
+    background-color:#DC8326; /*Color del menú (cafe))*/
+    border-radius: 10px;
+    outline:none;
+}
+
+.menu ul li {    /* items del menu */
+    position: relative;
+    float: left;
+    margin:5px;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.menu ul a { /* enlaces del menu */
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight: 400;
+    font-size:15px;
+    font-family: 'Patua One', cursive;
+    text-transform:uppercase; /*Titulos en Mayusculas*/
+}
+
+.menu ul li:hover { /* efecto al pasar el ratón por los items del menu */
+    border-radius: 5px;
+    background:rgb(231, 67, 2);
+}
+
+/*ENCABEZADO MENU DESPLEGABLE*/
+
+.menu ul ul { /* menu desplegable */
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background-color:#DC8326; /*Color del menú desplegable (cafe))*/
+    border-radius: 10px;
+    padding:0;
+}
+
+.menu ul ul li { /* items del menu desplegable */
+    float:none;
+    width:120px; /*tamaño del menú desplegable*/
+}
+
+.menu ul ul a { /* enlaces de los items del menu desplegable */
+    line-height:120%;
+}
+
+.menu ul li:hover > ul { /* items del menu desplegable al pasar el ratón */
+    display:block;
+    font-size: 16px;
+}
+
+div.principal{
+    min-height: calc(100% - 6rem);
+    margin-top: 10em;
+}
+
+h1{
+    z-index: 1;
+}
+
+p{
+    font-size: 15px;
+    text-transform:uppercase; /*Titulos en Mayusculas*/
+    text-decoration: none;
+    cursor: default;
+}
+
+/*Logo encabezado*/
+
+img.logoMenu{
+    margin-top: -55px;
+    margin-bottom: 9px;
+    margin-left: -20px;
+    width: 300px;
+    height: 80px;
+}
+
+img.logoMenu:hover{
+    transform: scale(1.1); 
+}
+
+img.perfilMenu{
+    margin-top: -50px;
+    margin-bottom: 9px;
+    margin-left: 71em;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-image: url(../imagenes/animales/gatos1.jpg);
+}
+
+img.perfilMenu:hover{
+    transform: scale(1.1); 
+    background-image: url(../imagenes/animales/gatosHover.jpg);
+    transition: all 0.2s linear;
+}
+
+p.empleadoMenu{
+    margin-top: -76px;
+    margin-left: 30em;
+    font-family: 'Patua One', cursive;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 9em;
+}
+
+a.empleadoMenu{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+p.empleadoMenu:hover{
+    transform: scale(1.1);
+}
+
+div.cerrarSesion{
+    margin-left: 50em;
+    margin-top: -30px;
+    padding-right: -100px;
+}
+
+a.cerrarSesion{
+    background-color: #DC8326;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+a.cerrarSesion:hover{
+    background:rgb(231, 67, 2);
+}
+
+/*SLIDER*/
+
+.contenedorSlider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider{ /*Animaciones de Slider*/
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms ease;
+    animation-name: autoplay;
+    animation-duration: 10.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.item-slider{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+.paginacion-slider{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.paginacion-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgb(245, 221, 6);
+    margin: 0 10px;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.paginacion-item:hover{
+    transform: scale(2);
+}
+
+.paginacion-item img{
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: all 600ms;
+}
+
+.paginacion-item:hover img{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+input[id="1"]:checked ~ .slider{
+    animation: none;
+    transform: translate3d(calc(-100% * 0),0,0);
+}
+
+input[id="1"]:checked ~ .paginacion-slider .paginacion-item[for="1"]{
+    background: #fff;
+}
+
+input[id="2"]:checked ~ .slider{
+    animation: none;
+    transform: translate3d(calc(-100% * 1),0,0);
+}
+
+input[id="2"]:checked ~ .paginacion-slider .paginacion-item[for="2"]{
+    background: #fff;
+}
+
+input[id="3"]:checked ~ .slider{
+    animation: none;
+    transform: translate3d(calc(-100% * 2),0,0);
+}
+
+input[id="3"]:checked ~ .paginacion-slider .paginacion-item[for="3"]{
+    background: #fff;
+}
+
+@keyframes autoplay{ 
+    33%{
+        transform: translate3d(calc(-100% * 0), 0, 0);
+    }
+
+    66%{
+        transform: translate3d(calc(-100% * 1), 0, 0);
+    }
+
+    100%{
+        transform: translate3d(calc(-100% * 2), 0, 0);
+    }
+}
+
+body{
+    height: 100%;
+    font-family: 'Patua One', cursive;
+    /*background-image: url(../imagenes/fondo.jpg);*/
+}
+
+/*SERVICIOS*/
+
+.iconos{
+    transition: all 0.4s linear;
+    background-color: #FDDFAB;
+    align: center;
+    width: 500px;
+    height: 500px;
+    margin: 20px;
+    border:2px solid #FDDFAB;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1%;
+    margin-top: 1%;
+    color: orangered;
+}
+.iconos img {
+    width: 100%;
+    height: 50%;
+    overflow:hidden;
+    transition: all .4s ease;
+}
+
+.iconos img:hover{
+    -webkit-transform:scale(0.1);
+    transform:scale(0.99);
+}
+
+.iconos:hover img{
+    filter: saturate(200%);
+}
+
+span{
+    color: #DC8326;
+    font-size: 30px;
+}
+
+span.parrafoServicio{
+    color: #DC8326;
+    font-size: 20px;
+}
+
+div.parrafoServicio{
+    text-align: justify;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+/*FOOTER*/
+
+img.imagenFooter{
+    margin-top: 15px;
+    /*margin-left: 20px;*/
+    margin-left: 1140em;
+    width: 15%;
+}
+
+img.imagenFooter:hover{
+    transform: scale(1.1); 
+}
+
+
+footer{
+    color: #DC8326;
+    background: #F0EFEE;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2em;
+    text-align: justify;
+    font-size: 1px;
+    position: absolute;
+    width: 100%;
+}
+
+footer p{
+    font-size: 20px;
+    margin-left: 23em;
+    margin-top: -35px;
+    margin-bottom: 20px;
+}
+
+footer p.contactanos{
+    font-size: 20px;
+    /*margin-left: 60em; */
+    margin-left: 140px;
+    margin-top: -80px;
+    margin-bottom: 20px;
+}
+
+
+img:hover{
+    /* tranformamos el elemento al pasar el mouse por encima al doble de
+    su tamaño con scale(2). */
+    /*transform: scale(1.1); */
+}
